@@ -7,7 +7,7 @@
   <!-- Primary Title & Meta Descriptions -->
   <title>REWEARA — Rent or Swap Occasion Wear for College Fests | Chennai Campus Delivery</title>
   <meta name="title" content="REWEARA — Rent or Swap Occasion Wear for College Fests | Chennai Campus Delivery">
-  <meta name="description" content="Rent verified occasion wear from ₹449 or swap 1:1 with zero cash, delivered to your campus locker in 2 hours. No retail markup, no shipping wait.">
+  <meta name="description" content="Rent verified occasion wear from ₹449 or swap 1:1 with zero cash, delivered to your campus locker in 2 hours. AI stylist matching for culturals, farewells & ethnic day — no retail markup, no shipping wait.">
   <meta name="keywords" content="campus fashion rental, occasion wear rental chennai, college culturals outfit, rent ethnic wear chennai, swap clothes students, farewell outfit rental">
   <meta name="author" content="Reweara Circular Technologies">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -97,6 +97,9 @@
 
       <!-- Center Links (Single Line, Never Wraps) -->
       <nav class="hidden xl:flex items-center gap-6 text-xs font-medium text-zinc-300 whitespace-nowrap">
+        <a href="#ai-matchmaker" class="hover:text-accent-lime transition-colors flex items-center gap-1">
+          <i data-lucide="sparkles" class="w-3.5 h-3.5 text-accent-lime"></i> AI Matcher
+        </a>
         <a href="#catalog" class="hover:text-accent-lime transition-colors">Rent Outfit</a>
         <a href="#swap-vault" class="hover:text-accent-lime transition-colors">Swap Vault</a>
         <a href="#reviews" class="hover:text-accent-lime transition-colors">Reviews</a>
@@ -134,10 +137,14 @@
         <span>CAMPUS: CHENNAI SOUTH</span>
         <span class="text-emerald-400">● 142 Outfits Live</span>
       </div>
+      <a href="#ai-matchmaker" onclick="toggleMobileMenu()" class="block text-zinc-200 text-sm font-medium py-1 hover:text-accent-lime">AI Matcher Engine</a>
       <a href="#catalog" onclick="toggleMobileMenu()" class="block text-zinc-200 text-sm font-medium py-1 hover:text-accent-lime">Rent Outfit</a>
       <a href="#swap-vault" onclick="toggleMobileMenu()" class="block text-zinc-200 text-sm font-medium py-1 hover:text-accent-lime">Swap Vault</a>
       <a href="#reviews" onclick="toggleMobileMenu()" class="block text-zinc-200 text-sm font-medium py-1 hover:text-accent-lime">Student Reviews</a>
       <a href="#yield-engine" onclick="toggleMobileMenu()" class="block text-zinc-200 text-sm font-medium py-1 hover:text-accent-lime">Student Yield Engine</a>
+      <a href="https://wa.me/917305609123?text=Hey%20Reweara%20team,%20I%20need%20quick%20help%20with%20an%20outfit" target="_blank" class="block text-emerald-400 text-sm font-medium py-1 flex items-center gap-2">
+        <i data-lucide="message-circle" class="w-4 h-4"></i> WhatsApp Support (7305609123)
+      </a>
       <div class="pt-2 flex flex-col gap-2">
         <button onclick="openModal('listModal'); toggleMobileMenu()" class="w-full py-2.5 rounded-xl text-center text-xs uppercase tracking-wider font-semibold bg-accent-lime text-black">
           + Monetize Dorm Closet
@@ -266,6 +273,89 @@
             </p>
             <div class="text-[11px] font-mono text-accent-gold">Metric: Under 2h locker retrieval time</div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AI Matchmaker & Stylist Event Engine -->
+    <section id="ai-matchmaker" class="py-20 bg-surface/80 border-b border-surface-border relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+          <div>
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent-lime/10 text-accent-lime text-xs font-mono mb-2">
+              <i data-lucide="bot" class="w-3.5 h-3.5"></i> PROPRIETARY EVENT ENGINE
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-display font-bold text-white">Reweara AI Matchmaker &amp; Stylist</h2>
+            <p class="text-zinc-400 text-sm mt-1 max-w-xl">
+              Tell our algorithm your event details. We balance aesthetic vibe criteria, budget thresholds, and campus locker proximity to generate high-impact looks.
+            </p>
+          </div>
+          <div class="text-right font-mono text-xs text-zinc-400">
+            Engine: CampusFashion-LLM-v2.6 • Active In Chennai
+          </div>
+        </div>
+
+        <div class="p-6 sm:p-8 rounded-3xl bg-surface-card border border-surface-border glow-subtle">
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="space-y-2">
+              <label class="block text-xs font-mono uppercase tracking-wider text-zinc-300">1. Target Occasion</label>
+              <select id="aiEvent" class="w-full px-4 py-3 rounded-xl bg-obsidian border border-surface-border text-white text-sm focus:outline-none focus:border-accent-lime">
+                <option value="culturals">College Culturals (Dance / Stage)</option>
+                <option value="farewell">Department Farewell / Prom</option>
+                <option value="ethnic">Ethnic Day / Traditional Night</option>
+                <option value="music">Music Concert / DJ Fest Night</option>
+              </select>
+            </div>
+            <div class="space-y-2">
+              <label class="block text-xs font-mono uppercase tracking-wider text-zinc-300">2. Aesthetic Vibe</label>
+              <select id="aiVibe" class="w-full px-4 py-3 rounded-xl bg-obsidian border border-surface-border text-white text-sm focus:outline-none focus:border-accent-lime">
+                <option value="regal">Regal Silk &amp; Zari (High Contrast)</option>
+                <option value="indowestern">Indo-Western Fusion Statement</option>
+                <option value="noir">Minimalist Dark Tailoring</option>
+                <option value="boho">Mirror-Work Vibrant Festival</option>
+              </select>
+            </div>
+            <div class="space-y-2">
+              <div class="flex justify-between items-center text-xs font-mono uppercase tracking-wider text-zinc-300">
+                <label>3. Max Rental Budget</label>
+                <span id="budgetValue" class="text-accent-lime font-bold font-mono">₹699</span>
+              </div>
+              <input type="range" id="aiBudget" min="299" max="1499" step="50" value="699"
+                     class="w-full h-2 bg-obsidian rounded-lg appearance-none cursor-pointer accent-accent-lime">
+              <div class="flex justify-between text-[10px] text-zinc-500 font-mono">
+                <span>₹299</span><span>₹899</span><span>₹1,499</span>
+              </div>
+            </div>
+            <div class="space-y-2">
+              <label class="block text-xs font-mono uppercase tracking-wider text-zinc-300">4. Campus Locker Node</label>
+              <select id="aiNode" class="w-full px-4 py-3 rounded-xl bg-obsidian border border-surface-border text-white text-sm focus:outline-none focus:border-accent-lime">
+                <option value="chennai_south">SRM / Anna Univ / VIT Hub</option>
+                <option value="chennai_central">Loyola / Stella Maris Corridor</option>
+                <option value="omr_belt">OMR College Belt Locker Node</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="mt-8 pt-6 border-t border-surface-border flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-3 text-xs text-zinc-400">
+              <span class="w-2 h-2 rounded-full bg-accent-lime animate-ping"></span>
+              <span>Vector embeddings mapped across 12 campus dorm clusters.</span>
+            </div>
+            <button onclick="runAiStylistMatch()" id="aiMatchBtn" class="w-full sm:w-auto px-7 py-3 rounded-xl bg-accent-lime text-black font-semibold text-sm hover:bg-accent-limeDark transition-colors flex items-center justify-center gap-2">
+              <i data-lucide="cpu" class="w-4 h-4"></i> Generate Event Match
+            </button>
+          </div>
+        </div>
+
+        <div id="aiResultsSection" class="mt-10">
+          <div class="flex items-center justify-between mb-4">
+            <h3 class="text-lg font-display font-semibold text-white flex items-center gap-2">
+              <span>Top Algorithmic Recommendations</span>
+              <span id="aiMatchSummary" class="text-xs font-mono font-normal text-accent-lime px-2.5 py-1 rounded bg-accent-lime/10 border border-accent-lime/20">3 Matches Found</span>
+            </h3>
+            <span class="text-xs text-zinc-400 font-mono">Ranked by Fit Probabilities &amp; Locker Proximity</span>
+          </div>
+          <div id="aiOutfitsGrid" class="grid grid-cols-1 md:grid-cols-3 gap-6"></div>
         </div>
       </div>
     </section>
