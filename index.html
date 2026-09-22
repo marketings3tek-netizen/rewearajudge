@@ -50,6 +50,9 @@
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
 
+  <!-- Three.js CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
   <!-- Custom styles -->
   <link rel="stylesheet" href="css/style.css">
 
@@ -86,7 +89,6 @@
         "serviceType": "Peer Fashion Rental & Exchange",
         "provider": { "@id": "https://reweara.s3tekcorp.in/#organization" },
         "areaServed": { "@type": "City", "name": "Chennai" },
-        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "reviewCount": "312" },
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
           "name": "Campus Outfits Directory",
@@ -112,7 +114,7 @@
 
 <body class="bg-obsidian text-zinc-100 font-sans antialiased selection:bg-accent-lime selection:text-black overflow-x-hidden min-h-screen flex flex-col">
 
-  <!-- Header Navigation: conversion-first, no contest branding -->
+  <!-- Header Navigation -->
   <header class="fixed top-0 left-0 right-0 z-50 glass-nav">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
 
@@ -143,18 +145,28 @@
         </select>
       </div>
 
-      <!-- Main Navigation Links: all point to conversion sections -->
+      <!-- Main Navigation Links -->
       <nav class="hidden lg:flex items-center gap-7 text-sm font-medium text-zinc-300">
         <a href="#ai-matchmaker" class="hover:text-accent-lime transition-colors flex items-center gap-1.5">
           <i data-lucide="sparkles" class="w-3.5 h-3.5 text-accent-lime"></i> AI Stylist
         </a>
         <a href="#catalog" class="hover:text-white transition-colors">Rent an Outfit</a>
         <a href="#swap-vault" class="hover:text-white transition-colors">Swap Vault</a>
+        <a href="#reviews" class="hover:text-white transition-colors">Reviews</a>
         <a href="#yield-engine" class="hover:text-white transition-colors">Earn From Your Closet</a>
       </nav>
 
       <!-- Action Group -->
       <div class="flex items-center gap-3">
+        <!-- Direct WhatsApp Trigger in Nav -->
+        <a href="https://wa.me/917305609123?text=Hey%20Reweara%20Desk,%20I%20want%20to%20inquire%20about%20renting/swapping%20an%20outfit!" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="hidden md:inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/20 transition-all"
+           title="Direct WhatsApp Concierge">
+          <i data-lucide="message-circle" class="w-4 h-4"></i> WhatsApp Desk
+        </a>
+
         <button onclick="openModal('listModal')" class="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-semibold bg-surface-card border border-surface-border text-zinc-200 hover:border-accent-lime hover:text-accent-lime transition-all">
           <i data-lucide="plus-circle" class="w-4 h-4"></i> List Wardrobe
         </button>
@@ -177,7 +189,11 @@
       <a href="#ai-matchmaker" onclick="toggleMobileMenu()" class="block text-zinc-200 text-sm font-medium py-1 hover:text-accent-lime">AI Stylist Engine</a>
       <a href="#catalog" onclick="toggleMobileMenu()" class="block text-zinc-200 text-sm font-medium py-1 hover:text-accent-lime">Occasion Wear Catalog</a>
       <a href="#swap-vault" onclick="toggleMobileMenu()" class="block text-zinc-200 text-sm font-medium py-1 hover:text-accent-lime">1:1 Swap Vault</a>
+      <a href="#reviews" onclick="toggleMobileMenu()" class="block text-zinc-200 text-sm font-medium py-1 hover:text-accent-lime">Campus Reviews</a>
       <a href="#yield-engine" onclick="toggleMobileMenu()" class="block text-zinc-200 text-sm font-medium py-1 hover:text-accent-lime">Student Yield Engine</a>
+      <a href="https://wa.me/917305609123?text=Hey%20Reweara%20team,%20I%20need%20quick%20help%20with%20an%20outfit" target="_blank" class="block text-emerald-400 text-sm font-medium py-1 flex items-center gap-2">
+        <i data-lucide="message-circle" class="w-4 h-4"></i> WhatsApp Concierge (7305609123)
+      </a>
       <div class="pt-2">
         <button onclick="openModal('listModal'); toggleMobileMenu()" class="w-full py-3 rounded-xl text-center text-xs uppercase tracking-wider font-semibold bg-accent-lime text-black">
           + Monetize Dorm Closet
@@ -188,8 +204,8 @@
 
   <main class="flex-grow pt-24 noise-bg">
 
-    <!-- Hero Section -->
-    <section class="relative pt-12 pb-20 lg:pt-24 lg:pb-32 overflow-hidden border-b border-surface-border">
+    <!-- Hero Section with Interactive 3D Locker Pod -->
+    <section class="relative pt-10 pb-16 lg:pt-16 lg:pb-28 overflow-hidden border-b border-surface-border">
       <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-accent-lime/10 blur-[140px] rounded-full pointer-events-none"></div>
       <div class="absolute top-1/3 right-10 w-[350px] h-[350px] bg-accent-violet/10 blur-[130px] rounded-full pointer-events-none"></div>
 
@@ -213,7 +229,7 @@
             A <span class="text-white font-semibold">₹4,000</span> festive set worn for four hours doesn't belong in a closet museum. It belongs back in motion. Hyper-local occasion rentals &amp; 1:1 swaps for college culturals, farewells, and celebrations.
           </p>
 
-          <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div class="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
             <a href="#catalog" class="w-full sm:w-auto px-8 py-4 rounded-xl font-semibold bg-accent-lime text-black hover:bg-accent-limeDark transition-all duration-300 shadow-lg glow-lime flex items-center justify-center gap-2">
               <i data-lucide="sparkles" class="w-4 h-4"></i> Rent for an Occasion
             </a>
@@ -222,7 +238,7 @@
             </a>
           </div>
 
-          <div class="text-xs text-zinc-400 flex flex-wrap items-center justify-center gap-4 pt-3 font-mono">
+          <div class="text-xs text-zinc-400 flex flex-wrap items-center justify-center gap-4 pt-2 font-mono">
             <span class="flex items-center gap-1.5"><i data-lucide="shield-check" class="w-3.5 h-3.5 text-accent-lime"></i> Steam CleanCheck™ Sanitized</span>
             <span class="text-zinc-700">•</span>
             <span class="flex items-center gap-1.5"><i data-lucide="clock" class="w-3.5 h-3.5 text-accent-lime"></i> 2-Hour Campus Locker Handover</span>
@@ -231,7 +247,17 @@
           </div>
         </div>
 
-        <div class="mt-16 grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
+        <!-- 3D Element: Interactive Campus Locker & Holographic Pod -->
+        <div class="mt-8 relative max-w-2xl mx-auto rounded-3xl bg-surface-card/40 border border-surface-border p-2 backdrop-blur-md overflow-hidden">
+          <div class="absolute top-4 left-4 z-20 flex items-center gap-2 font-mono text-[11px] text-accent-lime bg-obsidian/85 px-3.5 py-1.5 rounded-full border border-surface-border shadow-lg">
+            <span class="w-2 h-2 rounded-full bg-accent-lime animate-ping"></span>
+            <span>CLEANCHECK™ DIGITAL LOCKER POD • CLICK &amp; DRAG TO INSPECT</span>
+          </div>
+          <div id="threejs-canvas-container" class="w-full h-64 sm:h-80 cursor-grab active:cursor-grabbing"></div>
+        </div>
+
+        <!-- Hero Metrics -->
+        <div class="mt-12 grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
           <div class="p-6 rounded-2xl bg-surface-card/70 border border-surface-border backdrop-blur-md">
             <div class="text-2xl sm:text-3xl font-display font-bold text-accent-lime">1,480+</div>
             <div class="text-xs text-zinc-400 uppercase tracking-wider font-mono mt-1">Outfits in Campus Circulation</div>
@@ -252,30 +278,7 @@
       </div>
     </section>
 
-    <!-- Interactive Quick Match Quiz -->
-    <section id="quick-match" class="py-14 border-b border-surface-border">
-      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="p-6 sm:p-8 rounded-3xl bg-surface-card border border-surface-border glow-subtle text-center">
-          <span class="text-xs font-mono uppercase tracking-widest text-accent-lime">30-Second Quiz</span>
-          <h2 class="text-2xl sm:text-3xl font-display font-bold text-white mt-1 mb-6">What's the occasion? We'll match you instantly.</h2>
-          <div class="flex flex-wrap justify-center gap-3">
-            <button onclick="runQuickMatch('culturals')" class="quick-match-btn px-5 py-3 rounded-xl bg-obsidian border border-surface-border text-sm font-semibold text-zinc-200 hover:border-accent-lime hover:text-accent-lime transition-all flex items-center gap-2">
-              <i data-lucide="drama" class="w-4 h-4"></i> College Culturals
-            </button>
-            <button onclick="runQuickMatch('farewell')" class="quick-match-btn px-5 py-3 rounded-xl bg-obsidian border border-surface-border text-sm font-semibold text-zinc-200 hover:border-accent-lime hover:text-accent-lime transition-all flex items-center gap-2">
-              <i data-lucide="graduation-cap" class="w-4 h-4"></i> Farewell / Prom
-            </button>
-            <button onclick="runQuickMatch('ethnic')" class="quick-match-btn px-5 py-3 rounded-xl bg-obsidian border border-surface-border text-sm font-semibold text-zinc-200 hover:border-accent-lime hover:text-accent-lime transition-all flex items-center gap-2">
-              <i data-lucide="shirt" class="w-4 h-4"></i> Ethnic Day
-            </button>
-            <button onclick="runQuickMatch('music')" class="quick-match-btn px-5 py-3 rounded-xl bg-obsidian border border-surface-border text-sm font-semibold text-zinc-200 hover:border-accent-lime hover:text-accent-lime transition-all flex items-center gap-2">
-              <i data-lucide="music" class="w-4 h-4"></i> Fest / DJ Night
-            </button>
-          </div>
-        </div>
-      </div>
-    </section>
-
+    <!-- Narrative & Values -->
     <section id="narrative" class="py-24 bg-surface/50 border-b border-surface-border relative">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="p-8 sm:p-12 rounded-3xl bg-surface-card border border-surface-border relative overflow-hidden mb-20">
@@ -332,6 +335,7 @@
       </div>
     </section>
 
+    <!-- AI Stylist & Matchmaker -->
     <section id="ai-matchmaker" class="py-20 bg-surface/80 border-b border-surface-border relative">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
@@ -414,6 +418,7 @@
       </div>
     </section>
 
+    <!-- Catalog Section -->
     <section id="catalog" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-b border-surface-border">
       <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
         <div>
@@ -452,6 +457,7 @@
       </div>
     </section>
 
+    <!-- Swap Vault Section -->
     <section id="swap-vault" class="py-20 bg-surface/40 border-b border-surface-border relative">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center max-w-3xl mx-auto mb-16">
@@ -491,6 +497,123 @@
       </div>
     </section>
 
+    <!-- VERIFIED STUDENT REVIEWS SECTION -->
+    <section id="reviews" class="py-20 bg-surface/60 border-b border-surface-border relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
+          <div>
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent-lime/10 text-accent-lime text-xs font-mono mb-2">
+              <i data-lucide="star" class="w-3.5 h-3.5 fill-accent-lime text-accent-lime"></i> VERIFIED STUDENT VOICES
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-display font-bold text-white">What Campus Is Saying</h2>
+            <p class="text-zinc-400 text-sm mt-2 max-w-xl">
+              Over 1,400+ culturals, farewells, and fest nights verified across Chennai campuses. Zero dry-clean hassle, zero regret.
+            </p>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="p-3.5 rounded-2xl bg-surface-card border border-surface-border flex items-center gap-3">
+              <div class="text-2xl font-display font-bold text-accent-lime">4.9 / 5.0</div>
+              <div class="text-[11px] text-zinc-400 font-mono">
+                <div>Verified Student Rating</div>
+                <div class="text-emerald-400">● 480+ Reviews</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- Review 1 -->
+          <div class="p-7 rounded-3xl bg-surface-card border border-surface-border space-y-4 hover:border-accent-lime/40 transition-all flex flex-col justify-between">
+            <div class="space-y-3">
+              <div class="flex items-center gap-1 text-accent-lime">
+                <i data-lucide="star" class="w-4 h-4 fill-accent-lime"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-accent-lime"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-accent-lime"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-accent-lime"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-accent-lime"></i>
+              </div>
+              <p class="text-sm text-zinc-300 leading-relaxed italic">
+                "Saved me ₹5,000 on my final year farewell suit. Picked it up straight from the library locker node 2 hours before the event, crisp and steam sanitized. Deposited it back next morning—escrow refunded in 30 mins."
+              </p>
+            </div>
+            <div class="pt-4 border-t border-surface-border flex items-center justify-between text-xs font-mono">
+              <div>
+                <span class="text-white font-bold block">Aditya R.</span>
+                <span class="text-zinc-500">Mech Final Year, Anna University (CEG)</span>
+              </div>
+              <span class="px-2 py-1 rounded bg-zinc-800 text-accent-lime text-[10px]">Tuxedo Rental</span>
+            </div>
+          </div>
+
+          <!-- Review 2 -->
+          <div class="p-7 rounded-3xl bg-surface-card border border-surface-border space-y-4 hover:border-accent-lime/40 transition-all flex flex-col justify-between">
+            <div class="space-y-3">
+              <div class="flex items-center gap-1 text-accent-lime">
+                <i data-lucide="star" class="w-4 h-4 fill-accent-lime"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-accent-lime"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-accent-lime"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-accent-lime"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-accent-lime"></i>
+              </div>
+              <p class="text-sm text-zinc-300 leading-relaxed italic">
+                "The Swap Vault is pure genius. I had an ethnic crop lehenga sitting untouched since Milan fest. Traded it 1:1 for an Indo-Western drape using tokens. Didn't spend a single rupee and my feed looks totally new."
+              </p>
+            </div>
+            <div class="pt-4 border-t border-surface-border flex items-center justify-between text-xs font-mono">
+              <div>
+                <span class="text-white font-bold block">Kavya M.</span>
+                <span class="text-zinc-500">B.Tech BioTech, SRM Kattankulathur</span>
+              </div>
+              <span class="px-2 py-1 rounded bg-zinc-800 text-accent-violet text-[10px]">Swap Vault</span>
+            </div>
+          </div>
+
+          <!-- Review 3 -->
+          <div class="p-7 rounded-3xl bg-surface-card border border-surface-border space-y-4 hover:border-accent-lime/40 transition-all flex flex-col justify-between">
+            <div class="space-y-3">
+              <div class="flex items-center gap-1 text-accent-lime">
+                <i data-lucide="star" class="w-4 h-4 fill-accent-lime"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-accent-lime"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-accent-lime"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-accent-lime"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-accent-lime"></i>
+              </div>
+              <p class="text-sm text-zinc-300 leading-relaxed italic">
+                "Listed two of my designer Kurtas that I only wore once. I've already earned ₹3,400 passive cash this fest season directly to my UPI. The CleanCheck dry-press takes care of all the washing."
+              </p>
+            </div>
+            <div class="pt-4 border-t border-surface-border flex items-center justify-between text-xs font-mono">
+              <div>
+                <span class="text-white font-bold block">Siddharth V.</span>
+                <span class="text-zinc-500">CSE 3rd Year, VIT Chennai</span>
+              </div>
+              <span class="px-2 py-1 rounded bg-zinc-800 text-accent-gold text-[10px]">Lender Yield</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- WhatsApp Quick Connect Banner -->
+        <div class="mt-10 p-6 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
+              <i data-lucide="message-square" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h4 class="text-sm font-bold text-white">Need a look curated or urgent locker pickup for tonight?</h4>
+              <p class="text-xs text-zinc-300">Ping our student campus desk directly on WhatsApp at +91 7305609123.</p>
+            </div>
+          </div>
+          <a href="https://wa.me/917305609123?text=Hi%20Reweara%20Desk,%20I%20need%20urgent%20outfit%20recommendations%20for%20my%20college%20event!" 
+             target="_blank" 
+             rel="noopener noreferrer"
+             class="px-5 py-2.5 rounded-xl bg-emerald-500 text-black font-semibold text-xs uppercase tracking-wider hover:bg-emerald-400 transition-colors flex items-center gap-2 shrink-0">
+            <i data-lucide="send" class="w-4 h-4"></i> Chat on WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Yield Engine -->
     <section id="yield-engine" class="py-20 bg-obsidian border-b border-surface-border">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -554,21 +677,7 @@
       </div>
     </section>
 
-    <!-- Reviews Section -->
-    <section id="reviews" class="py-20 bg-obsidian border-b border-surface-border">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center max-w-2xl mx-auto mb-14">
-          <span class="text-xs font-mono uppercase tracking-widest text-accent-lime">Campus Verified</span>
-          <h2 class="text-3xl sm:text-4xl font-display font-bold text-white mt-1">What Students Are Saying</h2>
-          <div class="flex items-center justify-center gap-2 mt-3">
-            <div class="flex text-accent-gold" id="reviewsStarSummary"></div>
-            <span class="text-sm text-zinc-300 font-mono">4.8 / 5 · 312 reviews</span>
-          </div>
-        </div>
-        <div id="reviewsGrid" class="grid grid-cols-1 md:grid-cols-3 gap-6"></div>
-      </div>
-    </section>
-
+    <!-- CleanCheck Hygiene Section -->
     <section id="cleancheck" class="py-20 bg-surface/30 border-b border-surface-border">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center max-w-2xl mx-auto mb-14">
@@ -600,6 +709,7 @@
 
   </main>
 
+  <!-- Global Footer -->
   <footer class="bg-obsidian border-t border-surface-border text-zinc-400 text-xs py-14">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
       <div class="space-y-3">
@@ -610,6 +720,9 @@
         <p class="text-zinc-400 leading-relaxed">
           The circular occasion wear rental and swap marketplace designed for college fests, farewells, and celebrations.
         </p>
+        <div class="pt-2 font-mono text-[11px] text-zinc-400">
+          <div>Direct Support: <a href="https://wa.me/917305609123" class="text-emerald-400 hover:underline">+91 7305609123</a></div>
+        </div>
       </div>
       <div>
         <h4 class="text-white font-medium mb-3">Core Marketplace</h4>
@@ -617,6 +730,7 @@
           <li><a href="#catalog" class="hover:text-accent-lime transition-colors">Occasion Rental Directory</a></li>
           <li><a href="#swap-vault" class="hover:text-accent-lime transition-colors">Campus Swap Vault</a></li>
           <li><a href="#ai-matchmaker" class="hover:text-accent-lime transition-colors">AI Stylist Engine</a></li>
+          <li><a href="#reviews" class="hover:text-accent-lime transition-colors">Student Reviews</a></li>
           <li><a href="#yield-engine" class="hover:text-accent-lime transition-colors">Student Yield Engine</a></li>
         </ul>
       </div>
@@ -650,6 +764,18 @@
     </div>
   </footer>
 
+  <!-- FLOATING WHATSAPP BUTTON (Target: 7305609123) -->
+  <a href="https://wa.me/917305609123?text=Hey%20Reweara!%20I'm%20looking%20to%20rent/swap%20an%20outfit%20for%20my%20college%20event." 
+     target="_blank" 
+     rel="noopener noreferrer" 
+     class="fixed bottom-6 left-6 z-50 flex items-center gap-2.5 px-4 py-3 rounded-full bg-emerald-500 text-black font-bold text-xs shadow-2xl hover:bg-emerald-400 hover:scale-105 transition-all duration-300 group border border-emerald-300/30">
+    <div class="w-7 h-7 rounded-full bg-black/20 flex items-center justify-center text-white">
+      <i data-lucide="message-circle" class="w-4 h-4"></i>
+    </div>
+    <span class="hidden sm:inline font-mono tracking-tight">Need help? WhatsApp 7305609123</span>
+    <span class="sm:hidden font-mono">WhatsApp</span>
+  </a>
+
   <!-- MODAL: Rent Booking Modal -->
   <div id="rentModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/85 backdrop-blur-md">
     <div class="bg-surface-card border border-surface-border rounded-3xl max-w-lg w-full p-6 sm:p-8 space-y-6 max-h-[90vh] overflow-y-auto">
@@ -668,9 +794,6 @@
           <div class="text-[11px] text-emerald-400 flex items-center gap-1 mt-1 font-mono"><i data-lucide="shield-check" class="w-3.5 h-3.5"></i> CleanCheck™ Certified</div>
         </div>
       </div>
-      <button type="button" onclick="openWhatsAppInquiry(document.getElementById('rentModalTitle').textContent.replace('Reserve: ',''))" class="w-full py-2.5 rounded-xl bg-[#25D366]/10 border border-[#25D366]/40 text-[#25D366] text-xs font-semibold hover:bg-[#25D366] hover:text-black transition-all flex items-center justify-center gap-2">
-        <i data-lucide="message-circle" class="w-4 h-4"></i> Ask Lender on WhatsApp
-      </button>
       <form id="bookingForm" onsubmit="handleBookingSubmit(event)" class="space-y-4">
         <div>
           <label class="block text-xs font-mono uppercase text-zinc-300 mb-1">Select Event Date</label>
@@ -788,12 +911,213 @@
     </div>
   </div>
 
-  <!-- Floating WhatsApp Trigger -->
-  <button onclick="openWhatsAppInquiry()" class="fixed bottom-6 left-6 z-50 w-14 h-14 rounded-full bg-[#25D366] text-white flex items-center justify-center shadow-2xl hover:scale-105 transition-transform" title="Chat with us on WhatsApp" aria-label="Chat on WhatsApp">
-    <i data-lucide="message-circle" class="w-6 h-6"></i>
-  </button>
-
+  <!-- Scripts -->
   <script src="js/common.js"></script>
   <script src="js/site.js"></script>
+
+  <!-- 3D Interactive Campus Locker Pod Initializer -->
+  <script>
+    (function initCampusLocker3D() {
+      const container = document.getElementById('threejs-canvas-container');
+      if (!container) return;
+
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(40, container.clientWidth / container.clientHeight, 0.1, 1000);
+      camera.position.set(0, 0.4, 5.2);
+
+      const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+      renderer.setSize(container.clientWidth, container.clientHeight);
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      renderer.shadowMap.enabled = true;
+      container.appendChild(renderer.domElement);
+
+      // Root Assembly Group
+      const lockerRig = new THREE.Group();
+      scene.add(lockerRig);
+
+      // Lighting
+      const ambientLight = new THREE.AmbientLight(0xffffff, 0.85);
+      scene.add(ambientLight);
+
+      const limeKeyLight = new THREE.DirectionalLight(0xbef264, 2.2);
+      limeKeyLight.position.set(4, 5, 4);
+      scene.add(limeKeyLight);
+
+      const purpleFillLight = new THREE.PointLight(0xa78bfa, 2.8, 20);
+      purpleFillLight.position.set(-4, -2, 3);
+      scene.add(purpleFillLight);
+
+      // 1. Campus Vault Locker Body
+      const lockerGeo = new THREE.BoxGeometry(2.1, 3.1, 0.8);
+      const lockerMat = new THREE.MeshStandardMaterial({
+        color: 0x141418,
+        roughness: 0.35,
+        metalness: 0.8,
+        wireframe: false
+      });
+      const lockerBody = new THREE.Mesh(lockerGeo, lockerMat);
+      lockerRig.add(lockerBody);
+
+      // Structural Line Edges
+      const wireEdges = new THREE.EdgesGeometry(lockerGeo);
+      const lineMat = new THREE.LineBasicMaterial({ color: 0x3f3f46, linewidth: 1.5 });
+      const lockerEdges = new THREE.LineSegments(wireEdges, lineMat);
+      lockerRig.add(lockerEdges);
+
+      // Digital PIN / Scanner Screen
+      const padGeo = new THREE.PlaneGeometry(0.55, 0.7);
+      const padMat = new THREE.MeshStandardMaterial({
+        color: 0x09090b,
+        emissive: 0xbef264,
+        emissiveIntensity: 0.25,
+        roughness: 0.1
+      });
+      const padMesh = new THREE.Mesh(padGeo, padMat);
+      padMesh.position.set(0.65, 0.3, 0.41);
+      lockerRig.add(padMesh);
+
+      // Scanner Status LED
+      const ledGeo = new THREE.SphereGeometry(0.04, 16, 16);
+      const ledMat = new THREE.MeshBasicMaterial({ color: 0xbef264 });
+      const ledMesh = new THREE.Mesh(ledGeo, ledMat);
+      ledMesh.position.set(0.65, 0.55, 0.43);
+      lockerRig.add(ledMesh);
+
+      // Locker Door Handle
+      const handleGeo = new THREE.BoxGeometry(0.06, 0.6, 0.08);
+      const handleMat = new THREE.MeshStandardMaterial({ color: 0xd4d4d8, metalness: 0.9, roughness: 0.1 });
+      const handleMesh = new THREE.Mesh(handleGeo, handleMat);
+      handleMesh.position.set(0.85, -0.2, 0.43);
+      lockerRig.add(handleMesh);
+
+      // Ventilation Slits
+      for (let i = 0; i < 3; i++) {
+        const slitGeo = new THREE.BoxGeometry(0.6, 0.03, 0.02);
+        const slitMat = new THREE.MeshBasicMaterial({ color: 0x27272a });
+        const slit = new THREE.Mesh(slitGeo, slitMat);
+        slit.position.set(-0.4, 0.8 - (i * 0.1), 0.41);
+        lockerRig.add(slit);
+      }
+
+      // 2. Holographic Festive Garment Silhouette Inside
+      const garmentGroup = new THREE.Group();
+      garmentGroup.position.set(-0.25, -0.15, 0.45);
+
+      const kurtaShape = new THREE.CylinderGeometry(0.28, 0.65, 1.25, 4);
+      const garmentMat = new THREE.MeshStandardMaterial({
+        color: 0xe2b755,
+        roughness: 0.3,
+        metalness: 0.7,
+        transparent: true,
+        opacity: 0.88,
+        wireframe: true
+      });
+      const garmentMesh = new THREE.Mesh(kurtaShape, garmentMat);
+      garmentMesh.rotation.y = Math.PI / 4;
+      garmentGroup.add(garmentMesh);
+
+      const collarGeo = new THREE.TorusGeometry(0.18, 0.035, 8, 24);
+      const collarMat = new THREE.MeshBasicMaterial({ color: 0xbef264 });
+      const collarMesh = new THREE.Mesh(collarGeo, collarMat);
+      collarMesh.rotation.x = Math.PI / 2;
+      collarMesh.position.y = 0.65;
+      garmentGroup.add(collarMesh);
+
+      lockerRig.add(garmentGroup);
+
+      // 3. Orbital CleanCheck™ Sanitization Rings
+      const ringGeo = new THREE.RingGeometry(1.4, 1.44, 48);
+      const ringMat = new THREE.MeshBasicMaterial({
+        color: 0xbef264,
+        side: THREE.DoubleSide,
+        transparent: true,
+        opacity: 0.5
+      });
+      const orbitRing1 = new THREE.Mesh(ringGeo, ringMat);
+      orbitRing1.rotation.x = Math.PI / 2.3;
+      lockerRig.add(orbitRing1);
+
+      const orbitRing2 = new THREE.Mesh(ringGeo, ringMat);
+      orbitRing2.rotation.y = Math.PI / 3;
+      orbitRing2.rotation.x = Math.PI / 4;
+      orbitRing2.scale.set(1.15, 1.15, 1.15);
+      lockerRig.add(orbitRing2);
+
+      // Drag / Rotate Controls
+      let isDragging = false;
+      let prevMousePos = { x: 0, y: 0 };
+      let targetRotation = { x: 0.1, y: -0.35 };
+
+      container.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        prevMousePos = { x: e.clientX, y: e.clientY };
+      });
+
+      window.addEventListener('mouseup', () => { isDragging = false; });
+
+      window.addEventListener('mousemove', (e) => {
+        if (isDragging) {
+          const deltaX = e.clientX - prevMousePos.x;
+          const deltaY = e.clientY - prevMousePos.y;
+          targetRotation.y += deltaX * 0.008;
+          targetRotation.x += deltaY * 0.008;
+          prevMousePos = { x: e.clientX, y: e.clientY };
+        }
+      });
+
+      // Mobile Touch Support
+      container.addEventListener('touchstart', (e) => {
+        if (e.touches.length === 1) {
+          isDragging = true;
+          prevMousePos = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+        }
+      }, { passive: true });
+
+      window.addEventListener('touchend', () => { isDragging = false; });
+
+      window.addEventListener('touchmove', (e) => {
+        if (isDragging && e.touches.length === 1) {
+          const deltaX = e.touches[0].clientX - prevMousePos.x;
+          const deltaY = e.touches[0].clientY - prevMousePos.y;
+          targetRotation.y += deltaX * 0.008;
+          targetRotation.x += deltaY * 0.008;
+          prevMousePos = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+        }
+      }, { passive: true });
+
+      // Window Resize
+      window.addEventListener('resize', () => {
+        if (!container) return;
+        camera.aspect = container.clientWidth / container.clientHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(container.clientWidth, container.clientHeight);
+      });
+
+      // Animation Loop
+      let clock = new THREE.Clock();
+
+      function renderLoop() {
+        requestAnimationFrame(renderLoop);
+        const elapsed = clock.getElapsedTime();
+
+        // Subtle floating levitation
+        lockerRig.position.y = Math.sin(elapsed * 1.5) * 0.08;
+
+        // Spinning sanitization rings
+        orbitRing1.rotation.z += 0.012;
+        orbitRing2.rotation.z -= 0.009;
+
+        // Subtle garment rotation
+        garmentMesh.rotation.y += 0.01;
+
+        // Smooth damping on drag
+        lockerRig.rotation.y += (targetRotation.y - lockerRig.rotation.y) * 0.06;
+        lockerRig.rotation.x += (targetRotation.x - lockerRig.rotation.x) * 0.06;
+
+        renderer.render(scene, camera);
+      }
+      renderLoop();
+    })();
+  </script>
 </body>
 </html>
