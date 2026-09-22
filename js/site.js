@@ -182,3 +182,18 @@ window.addEventListener('DOMContentLoaded', () => {
   initYieldCalculator();
   lucide.createIcons();
 });
+function toggleFaq(button) {
+  const answer = button.nextElementSibling;
+  const icon = button.querySelector('.faq-icon');
+  const isOpen = !answer.classList.contains('hidden');
+
+  // Close all other open items
+  document.querySelectorAll('.faq-answer').forEach(el => el.classList.add('hidden'));
+  document.querySelectorAll('.faq-icon').forEach(el => el.classList.remove('rotate-180'));
+
+  // Toggle current item
+  if (!isOpen) {
+    answer.classList.remove('hidden');
+    icon.classList.add('rotate-180');
+  }
+}
