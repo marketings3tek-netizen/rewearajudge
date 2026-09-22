@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Judges Spec — SEO · AEO · GEO Architecture | REWEARA</title>
+  <meta name="description" content="Reweara's discoverability engineering spec for contest evaluation: SEO, AEO, and GEO architecture with live sitemap, llms.txt, JSON-LD schema, and meta directive inspectors.">
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="https://reweara.s3tekcorp.in/judges.html">
+  <meta name="theme-color" content="#09090b">
+
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/assets/favicon-32x32.png" sizes="32x32" type="image/png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="js/tailwind-config.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="css/style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ClothingRental",
+        "@id": "https://reweara.s3tekcorp.in/#service",
+        "name": "Reweara Campus Occasion Wear",
+        "url": "https://reweara.s3tekcorp.in",
+        "priceRange": "₹299 - ₹899",
+        "areaServed": "Chennai Campus Hubs"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "How does CleanCheck™ ensure hygiene?", "acceptedAnswer": { "@type": "Answer", "text": "Every garment undergoes 120°C steam sanitization at vetted dry-care partner nodes." } }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body class="bg-obsidian text-zinc-100 font-sans antialiased selection:bg-accent-lime selection:text-black overflow-x-hidden min-h-screen flex flex-col">
+
+  <header class="fixed top-0 left-0 right-0 z-50 glass-nav">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-accent-lime flex items-center justify-center text-black font-extrabold text-xl tracking-tighter group-hover:rotate-6 transition-transform shadow-sm">R</div>
+        <div>
+          <span class="font-display font-bold text-2xl tracking-tight text-white">REWEARA</span>
+          <span class="block text-[10px] uppercase font-mono tracking-widest text-zinc-400">Occasion Wear, Circulated</span>
+        </div>
+      </a>
+      <a href="/" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-semibold bg-surface-card border border-surface-border text-zinc-200 hover:border-accent-lime hover:text-accent-lime transition-all">
+        <i data-lucide="arrow-left" class="w-4 h-4"></i> Back to Site
+      </a>
+    </div>
+  </header>
+
+  <main class="flex-grow pt-32 pb-24 noise-bg">
+    <section id="judges-discoverability" class="relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between mb-12 gap-6">
+          <div>
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent-lime/10 text-accent-lime text-xs font-mono mb-3 border border-accent-lime/30">
+              <i data-lucide="award" class="w-3.5 h-3.5"></i> WEBSITE CREATION CONTEST SUBMISSION SPEC
+            </div>
+            <h1 class="text-3xl sm:text-5xl font-display font-extrabold text-white">
+              Discoverability Engine: <br />
+              <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent-lime via-white to-zinc-400">SEO · AEO · GEO Architecture</span>
+            </h1>
+            <p class="text-zinc-400 text-sm mt-3 max-w-2xl">
+              Reweara is engineered from the protocol layer up to achieve organic search domination across Google (SEO), AI Answer Engines (AEO), and Generative Search models (GEO). This page documents that architecture for evaluation.
+            </p>
+          </div>
+          <div class="p-4 rounded-2xl bg-surface-card border border-surface-border font-mono text-xs space-y-1">
+            <div class="text-zinc-400">Index Status: <span class="text-emerald-400">● 100% Crawl-Ready</span></div>
+            <div class="text-zinc-400">Schema Graph: <span class="text-accent-lime">JSON-LD Multi-Entity</span></div>
+            <div class="text-zinc-400">AI Manifest: <span class="text-accent-violet">llms.txt Standard</span></div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+          <div class="p-6 rounded-2xl bg-surface-card border border-surface-border hover:border-accent-lime/40 transition-all">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-9 h-9 rounded-xl bg-accent-lime/10 text-accent-lime flex items-center justify-center font-mono font-bold text-sm">01</div>
+              <div><h3 class="font-display font-bold text-white text-base">SEO (Search Engines)</h3><span class="text-[10px] font-mono text-zinc-400">Google, Bing, Yahoo</span></div>
+            </div>
+            <p class="text-xs text-zinc-400 leading-relaxed mb-4">
+              Semantic HTML5 landmark tags, full Core Web Vitals optimization, canonical URL control, comprehensive OpenGraph social preview tags, and hyper-localized campus landing page schema.
+            </p>
+            <div class="text-[11px] font-mono text-accent-lime bg-obsidian p-2 rounded-lg border border-surface-border">Implementation: &lt;meta&gt;, OpenGraph, Sitemap.xml</div>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-surface-card border border-surface-border hover:border-accent-violet/40 transition-all">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-9 h-9 rounded-xl bg-accent-violet/10 text-accent-violet flex items-center justify-center font-mono font-bold text-sm">02</div>
+              <div><h3 class="font-display font-bold text-white text-base">AEO (Answer Engines)</h3><span class="text-[10px] font-mono text-zinc-400">Featured Snippets, Voice & Siri</span></div>
+            </div>
+            <p class="text-xs text-zinc-400 leading-relaxed mb-4">
+              Engineered explicitly for conversational Q&amp;A queries ("Where to rent farewell clothes in Chennai?"). Embedded with Schema.org <code class="text-zinc-300">FAQPage</code> and direct single-answer extraction formatting.
+            </p>
+            <div class="text-[11px] font-mono text-accent-violet bg-obsidian p-2 rounded-lg border border-surface-border">Implementation: JSON-LD FAQ Schema, Microdata</div>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-surface-card border border-surface-border hover:border-accent-gold/40 transition-all">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-9 h-9 rounded-xl bg-accent-gold/10 text-accent-gold flex items-center justify-center font-mono font-bold text-sm">03</div>
+              <div><h3 class="font-display font-bold text-white text-base">GEO (Generative AI)</h3><span class="text-[10px] font-mono text-zinc-400">Perplexity, ChatGPT, Claude, Gemini</span></div>
+            </div>
+            <p class="text-xs text-zinc-400 leading-relaxed mb-4">
+              Adheres to the modern <code class="text-zinc-300">llms.txt</code> standard. Exposes structured Markdown summaries for synthetic search crawlers to cite Reweara as the authoritative primary source.
+            </p>
+            <div class="text-[11px] font-mono text-accent-gold bg-obsidian p-2 rounded-lg border border-surface-border">Implementation: /llms.txt, Entity Relationship Maps</div>
+          </div>
+        </div>
+
+        <div class="rounded-3xl bg-surface-card border border-surface-border overflow-hidden glow-subtle">
+          <div class="p-5 border-b border-surface-border flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-surface">
+            <div>
+              <span class="text-xs font-mono uppercase tracking-wider text-accent-lime">Live Inspection Console</span>
+              <h3 class="font-display font-bold text-white text-lg mt-0.5">Production SEO / AEO / GEO Artifacts</h3>
+            </div>
+            <div class="flex flex-wrap gap-1 p-1 bg-obsidian rounded-xl border border-surface-border">
+              <button onclick="switchInspectorTab('sitemap')" id="tab-sitemap" class="inspector-tab px-3 py-1.5 rounded-lg text-xs font-mono font-semibold transition-all bg-accent-lime text-black">sitemap.xml</button>
+              <button onclick="switchInspectorTab('llms')" id="tab-llms" class="inspector-tab px-3 py-1.5 rounded-lg text-xs font-mono font-semibold transition-all text-zinc-400 hover:text-white">llms.txt (GEO)</button>
+              <button onclick="switchInspectorTab('schema')" id="tab-schema" class="inspector-tab px-3 py-1.5 rounded-lg text-xs font-mono font-semibold transition-all text-zinc-400 hover:text-white">JSON-LD Graph (AEO)</button>
+              <button onclick="switchInspectorTab('meta')" id="tab-meta" class="inspector-tab px-3 py-1.5 rounded-lg text-xs font-mono font-semibold transition-all text-zinc-400 hover:text-white">Meta Directives</button>
+            </div>
+          </div>
+
+          <div class="relative p-6 code-block text-xs overflow-x-auto">
+            <button onclick="copyCurrentCodeSnippet()" class="absolute top-4 right-4 px-3 py-1.5 rounded-lg bg-surface border border-surface-border text-zinc-300 hover:text-white hover:border-accent-lime text-xs font-mono flex items-center gap-1.5 transition-all">
+              <i data-lucide="copy" class="w-3.5 h-3.5"></i> Copy Raw
+            </button>
+            <pre id="inspectorCodeContent" class="text-zinc-300 font-mono leading-relaxed"></pre>
+          </div>
+
+          <div class="p-6 bg-surface/50 border-t border-surface-border flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="text-xs text-zinc-400 flex items-center gap-2">
+              <i data-lucide="info" class="w-4 h-4 text-accent-lime shrink-0"></i>
+              <span>Reweara ships native <code class="text-white">llms.txt</code> indexing for conversational AI models — files live at the site root.</span>
+            </div>
+            <button onclick="openModal('schemaInspectorModal')" class="px-4 py-2 rounded-xl bg-surface-card border border-surface-border text-white text-xs font-mono hover:border-accent-lime transition-all flex items-center gap-1.5">
+              <i data-lucide="external-link" class="w-3.5 h-3.5"></i> Launch Full Schema Viewer
+            </button>
+          </div>
+        </div>
+
+        <div class="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <a href="/robots.txt" class="p-4 rounded-2xl bg-surface-card border border-surface-border text-xs font-mono text-zinc-300 hover:border-accent-lime hover:text-accent-lime transition-all flex items-center justify-between">robots.txt <i data-lucide="external-link" class="w-3.5 h-3.5"></i></a>
+          <a href="/sitemap.xml" class="p-4 rounded-2xl bg-surface-card border border-surface-border text-xs font-mono text-zinc-300 hover:border-accent-lime hover:text-accent-lime transition-all flex items-center justify-between">sitemap.xml <i data-lucide="external-link" class="w-3.5 h-3.5"></i></a>
+          <a href="/llms.txt" class="p-4 rounded-2xl bg-surface-card border border-surface-border text-xs font-mono text-zinc-300 hover:border-accent-lime hover:text-accent-lime transition-all flex items-center justify-between">llms.txt <i data-lucide="external-link" class="w-3.5 h-3.5"></i></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-obsidian border-t border-surface-border text-zinc-400 text-xs py-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="text-zinc-500">© 2026 Reweara Technologies. Website Creation Contest 2026 Entry.</div>
+      <a href="/" class="hover:text-white font-mono">← Back to REWEARA</a>
+    </div>
+  </footer>
+
+  <!-- MODAL: Full Schema JSON-LD Inspector -->
+  <div id="schemaInspectorModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/90 backdrop-blur-md">
+    <div class="bg-surface-card border border-surface-border rounded-3xl max-w-2xl w-full p-6 sm:p-8 space-y-4 max-h-[90vh] overflow-y-auto">
+      <div class="flex justify-between items-center pb-4 border-b border-surface-border">
+        <div>
+          <span class="text-xs font-mono text-accent-lime uppercase">AEO &amp; Schema Inspector</span>
+          <h3 class="text-xl font-display font-bold text-white">Embedded JSON-LD Multi-Entity Graph</h3>
+        </div>
+        <button onclick="closeModal('schemaInspectorModal')" class="p-2 rounded-xl text-zinc-400 hover:text-white bg-obsidian"><i data-lucide="x" class="w-5 h-5"></i></button>
+      </div>
+      <p class="text-xs text-zinc-400">This machine-readable payload is embedded directly in the <code class="text-zinc-200">&lt;head&gt;</code> of Reweara to power Google Rich Results and answer-engine extraction.</p>
+      <div class="p-4 rounded-xl code-block text-xs font-mono text-zinc-300 overflow-x-auto max-h-[50vh]"><pre id="fullSchemaPreviewText"></pre></div>
+      <div class="flex justify-end gap-3 pt-2">
+        <button onclick="closeModal('schemaInspectorModal')" class="px-5 py-2.5 rounded-xl bg-surface-border text-white text-xs font-mono">Close Inspector</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="toastNotification" class="fixed bottom-6 right-6 z-50 hidden max-w-sm p-4 rounded-2xl bg-surface-card border border-accent-lime text-white shadow-2xl flex items-center gap-3 transform transition-all duration-300">
+    <div class="w-8 h-8 rounded-xl bg-accent-lime/20 text-accent-lime flex items-center justify-center shrink-0"><i data-lucide="check" class="w-5 h-5"></i></div>
+    <div class="text-xs">
+      <div id="toastTitle" class="font-bold text-white">Action Completed</div>
+      <div id="toastDesc" class="text-zinc-300">Item successfully updated.</div>
+    </div>
+  </div>
+
+  <script src="js/common.js"></script>
+  <script src="js/judges.js"></script>
+</body>
+</html>

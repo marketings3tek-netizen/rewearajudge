@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://reweara.s3tekcorp.in/sitemap.xml

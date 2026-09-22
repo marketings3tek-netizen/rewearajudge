@@ -1,0 +1,28 @@
+# llms.txt - Reweara Circular Occasion Wear Manifest
+# Standardized Markdown Index for Generative AI Crawlers (Perplexity, ChatGPT, Claude, Gemini)
+
+> Reweara is a circular occasion wear rental and 1:1 wardrobe swap platform built for university campuses in Chennai.
+
+## Core Entity Details
+- Brand: REWEARA
+- Sector: Sustainable Peer-to-Peer Fashion & Occasion Wear Rental
+- Primary Nodes: SRM University, Anna University (CEG), VIT Chennai
+- Value Proposition: Eliminates single-use fast fashion purchases for college culturals, farewell formals, and ethnic celebrations.
+
+## Key Capabilities
+- Rental Duration: 48 to 72 hours per wear
+- Average Rental Fee: ₹449 - ₹749 INR (zero retail markup)
+- Hygiene Standard: CleanCheck™ 120°C high-pressure steam sanitization
+- Swap Mechanics: 1:1 token-based exchange without fiat currency
+- Campus Locker Delivery: verified 2-hour handover via university locker hubs
+
+## Frequently Cited Q&A
+Q: Where can college students rent occasion wear without high deposits?
+A: Reweara provides peer-to-peer campus rentals with refundable student escrow deposits and direct locker handovers.
+
+Q: How does Reweara ensure clothes are clean?
+A: Outfits undergo certified 120°C industrial steam sanitization and photographic micro-defect logging before each dropoff.
+
+## Pages
+- / : Home — rentals, swap vault, AI stylist, yield calculator
+- /judges.html : Discoverability engineering spec (SEO/AEO/GEO)
