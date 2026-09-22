@@ -64,28 +64,28 @@
 
 <body class="bg-obsidian text-zinc-100 font-sans antialiased selection:bg-accent-lime selection:text-black overflow-x-hidden min-h-screen flex flex-col">
 
-  <!-- Clean, Properly Aligned Sticky Navigation -->
+  <!-- Header Navigation -->
   <header class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-surface-border/80">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-3">
 
-      <!-- Left: Brand Logo & Tag -->
-      <div class="flex items-center gap-6 shrink-0">
+      <!-- Brand Logo -->
+      <div class="flex items-center gap-4 shrink-0">
         <a href="/" class="flex items-center gap-3 group">
           <div class="w-10 h-10 rounded-xl bg-accent-lime flex items-center justify-center text-black font-extrabold text-xl tracking-tighter group-hover:rotate-6 transition-transform shadow-sm">
             R
           </div>
           <div class="flex flex-col">
-            <div class="flex items-center gap-2">
-              <span class="font-display font-bold text-2xl tracking-tight text-white leading-none">REWEARA</span>
-              <span class="inline-block w-2 h-2 rounded-full bg-accent-lime animate-pulse"></span>
+            <div class="flex items-center gap-1.5">
+              <span class="font-display font-bold text-xl tracking-tight text-white leading-none">REWEARA</span>
+              <span class="inline-block w-1.5 h-1.5 rounded-full bg-accent-lime animate-pulse"></span>
             </div>
-            <span class="text-[10px] uppercase font-mono tracking-widest text-zinc-400 mt-1">Occasion Wear, Circulated</span>
+            <span class="text-[9px] uppercase font-mono tracking-widest text-zinc-400 mt-1 whitespace-nowrap">Occasion Wear, Circulated</span>
           </div>
         </a>
 
         <!-- Campus Node Selector -->
-        <div class="hidden xl:flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-card border border-surface-border text-xs text-zinc-300">
-          <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+        <div class="hidden 2xl:flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-card border border-surface-border text-xs text-zinc-300">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 shrink-0"></span>
           <span class="font-mono text-zinc-400 text-[11px]">Node:</span>
           <select id="campusNodeSelector" onchange="switchCampusNode(this.value)" class="bg-transparent text-white font-medium text-xs focus:outline-none cursor-pointer pr-1">
             <option value="chennai_south" class="bg-surface-card">Chennai South (SRM / Anna / VIT)</option>
@@ -95,55 +95,51 @@
         </div>
       </div>
 
-      <!-- Center: Clean Navigation Links -->
-      <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-zinc-300">
-        <a href="#catalog" class="hover:text-accent-lime transition-colors">Rent an Outfit</a>
+      <!-- Center Links (Single Line, Never Wraps) -->
+      <nav class="hidden xl:flex items-center gap-6 text-xs font-medium text-zinc-300 whitespace-nowrap">
+        <a href="#catalog" class="hover:text-accent-lime transition-colors">Rent Outfit</a>
         <a href="#swap-vault" class="hover:text-accent-lime transition-colors">Swap Vault</a>
-        <a href="#reviews" class="hover:text-accent-lime transition-colors">Student Reviews</a>
-        <a href="#yield-engine" class="hover:text-accent-lime transition-colors">Earn From Your Closet</a>
+        <a href="#reviews" class="hover:text-accent-lime transition-colors">Reviews</a>
+        <a href="#yield-engine" class="hover:text-accent-lime transition-colors">Earn Yield</a>
       </nav>
 
-      <!-- Right: Action Bar with Aligned WhatsApp Desk -->
-      <div class="flex items-center gap-2.5 sm:gap-3 shrink-0">
+      <!-- Right Action Items -->
+      <div class="flex items-center gap-2.5 shrink-0">
         <a href="https://wa.me/917305609123?text=Hey%20Reweara%20Desk,%20I'm%20looking%20to%20rent/swap%20an%20outfit%20for%20a%20college%20event!" 
            target="_blank" 
            rel="noopener noreferrer" 
-           class="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/20 hover:border-emerald-500/50 transition-all"
-           title="Direct WhatsApp Desk">
-          <i data-lucide="message-circle" class="w-4 h-4"></i>
-          <span class="font-mono">WhatsApp Desk</span>
+           class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-semibold bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/20 transition-all whitespace-nowrap">
+          <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
+          <span class="font-mono hidden sm:inline">WhatsApp Desk</span>
         </a>
 
-        <button onclick="openModal('listModal')" class="hidden md:inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-semibold bg-surface-card border border-surface-border text-zinc-200 hover:border-accent-lime hover:text-accent-lime transition-all">
-          <i data-lucide="plus-circle" class="w-4 h-4"></i> List Wardrobe
+        <button onclick="openModal('listModal')" class="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold bg-surface-card border border-surface-border text-zinc-200 hover:border-accent-lime hover:text-accent-lime transition-all whitespace-nowrap">
+          <i data-lucide="plus-circle" class="w-3.5 h-3.5"></i> List Wardrobe
         </button>
 
-        <button onclick="openModal('bagModal')" class="relative p-2.5 rounded-xl bg-surface-card border border-surface-border text-zinc-200 hover:text-white transition-colors" title="View Bag">
-          <i data-lucide="shopping-bag" class="w-5 h-5"></i>
-          <span id="bagCounter" class="absolute -top-1 -right-1 w-5 h-5 rounded-full bg-accent-lime text-black text-[10px] font-bold flex items-center justify-center">1</span>
+        <button onclick="openModal('bagModal')" class="relative p-2 rounded-xl bg-surface-card border border-surface-border text-zinc-200 hover:text-white transition-colors" title="View Bag">
+          <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+          <span id="bagCounter" class="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-accent-lime text-black text-[9px] font-bold flex items-center justify-center">1</span>
         </button>
 
-        <button id="mobileMenuBtn" onclick="toggleMobileMenu()" class="lg:hidden p-2.5 rounded-xl bg-surface-card border border-surface-border text-zinc-300 hover:text-white">
-          <i data-lucide="menu" class="w-5 h-5"></i>
+        <button id="mobileMenuBtn" onclick="toggleMobileMenu()" class="xl:hidden p-2 rounded-xl bg-surface-card border border-surface-border text-zinc-300 hover:text-white">
+          <i data-lucide="menu" class="w-4 h-4"></i>
         </button>
       </div>
     </div>
 
     <!-- Mobile Drawer -->
-    <div id="mobileDrawer" class="hidden lg:hidden border-t border-surface-border bg-obsidian/95 backdrop-blur-xl px-6 py-6 space-y-4">
-      <div class="flex items-center justify-between text-xs text-zinc-400 font-mono pb-3 border-b border-surface-border">
+    <div id="mobileDrawer" class="hidden xl:hidden border-t border-surface-border bg-obsidian/95 backdrop-blur-xl px-6 py-5 space-y-3">
+      <div class="flex items-center justify-between text-xs text-zinc-400 font-mono pb-2 border-b border-surface-border">
         <span>CAMPUS: CHENNAI SOUTH</span>
         <span class="text-emerald-400">● 142 Outfits Live</span>
       </div>
-      <a href="#catalog" onclick="toggleMobileMenu()" class="block text-zinc-200 text-sm font-medium py-1 hover:text-accent-lime">Occasion Wear Catalog</a>
-      <a href="#swap-vault" onclick="toggleMobileMenu()" class="block text-zinc-200 text-sm font-medium py-1 hover:text-accent-lime">1:1 Swap Vault</a>
+      <a href="#catalog" onclick="toggleMobileMenu()" class="block text-zinc-200 text-sm font-medium py-1 hover:text-accent-lime">Rent Outfit</a>
+      <a href="#swap-vault" onclick="toggleMobileMenu()" class="block text-zinc-200 text-sm font-medium py-1 hover:text-accent-lime">Swap Vault</a>
       <a href="#reviews" onclick="toggleMobileMenu()" class="block text-zinc-200 text-sm font-medium py-1 hover:text-accent-lime">Student Reviews</a>
       <a href="#yield-engine" onclick="toggleMobileMenu()" class="block text-zinc-200 text-sm font-medium py-1 hover:text-accent-lime">Student Yield Engine</a>
-      <a href="https://wa.me/917305609123?text=Hey%20Reweara%20team,%20I%20need%20quick%20help%20with%20an%20outfit" target="_blank" class="block text-emerald-400 text-sm font-medium py-1 flex items-center gap-2">
-        <i data-lucide="message-circle" class="w-4 h-4"></i> WhatsApp Support (7305609123)
-      </a>
-      <div class="pt-2">
-        <button onclick="openModal('listModal'); toggleMobileMenu()" class="w-full py-3 rounded-xl text-center text-xs uppercase tracking-wider font-semibold bg-accent-lime text-black">
+      <div class="pt-2 flex flex-col gap-2">
+        <button onclick="openModal('listModal'); toggleMobileMenu()" class="w-full py-2.5 rounded-xl text-center text-xs uppercase tracking-wider font-semibold bg-accent-lime text-black">
           + Monetize Dorm Closet
         </button>
       </div>
