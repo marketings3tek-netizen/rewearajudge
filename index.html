@@ -493,6 +493,115 @@
             </div>
           </div>
         </div>
+        <!-- FAQ Section -->
+    <section id="faq" class="py-20 bg-surface/50 border-b border-surface-border relative">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-2xl mx-auto mb-14">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent-lime/10 text-accent-lime text-xs font-mono mb-2">
+            <i data-lucide="help-circle" class="w-3.5 h-3.5"></i> FREQUENTLY ASKED QUESTIONS
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-display font-bold text-white mt-1">Everything You Need to Know</h2>
+          <p class="text-zinc-400 text-sm mt-2">
+            Got questions about campus locker delivery, CleanCheck™ sanitization, or deposit security? We've got answers.
+          </p>
+        </div>
+
+        <!-- FAQ Accordion Container -->
+        <div class="space-y-4">
+
+          <!-- FAQ Item 1 -->
+          <div class="faq-card rounded-2xl bg-surface-card border border-surface-border overflow-hidden transition-all">
+            <button onclick="toggleFaq(this)" class="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 focus:outline-none">
+              <span class="font-display font-semibold text-white text-base sm:text-lg">How does CleanCheck™ ensure garment hygiene?</span>
+              <span class="faq-icon w-8 h-8 rounded-xl bg-obsidian border border-surface-border flex items-center justify-center text-accent-lime shrink-0 transition-transform duration-200">
+                <i data-lucide="chevron-down" class="w-4 h-4"></i>
+              </span>
+            </button>
+            <div class="faq-answer hidden px-5 pb-5 sm:px-6 sm:pb-6 text-sm text-zinc-400 leading-relaxed border-t border-surface-border/50 pt-4">
+              Every rented or swapped piece passes through verified campus partner dry-care nodes for 120°C high-pressure industrial steam sanitization. This eliminates 99.9% of bacteria, allergens, and odors without damaging delicate fabrics, zari borders, or sequin work. Garments are delivered in tamper-evident sealed pods.
+            </div>
+          </div>
+
+          <!-- FAQ Item 2 -->
+          <div class="faq-card rounded-2xl bg-surface-card border border-surface-border overflow-hidden transition-all">
+            <button onclick="toggleFaq(this)" class="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 focus:outline-none">
+              <span class="font-display font-semibold text-white text-base sm:text-lg">How does locker pickup and 2-hour handover work?</span>
+              <span class="faq-icon w-8 h-8 rounded-xl bg-obsidian border border-surface-border flex items-center justify-center text-accent-lime shrink-0 transition-transform duration-200">
+                <i data-lucide="chevron-down" class="w-4 h-4"></i>
+              </span>
+            </button>
+            <div class="faq-answer hidden px-5 pb-5 sm:px-6 sm:pb-6 text-sm text-zinc-400 leading-relaxed border-t border-surface-border/50 pt-4">
+              Instead of relying on slow cross-city couriers, we maintain dedicated locker hubs at major campus hubs (SRM Library, Anna University CEG Canteen, VIT North Gate). Once you book, you receive a unique one-time locker PIN. Simply walk to the node, key in your PIN, and collect your steam-pressed outfit within 2 hours.
+            </div>
+          </div>
+
+          <!-- FAQ Item 3 -->
+          <div class="faq-card rounded-2xl bg-surface-card border border-surface-border overflow-hidden transition-all">
+            <button onclick="toggleFaq(this)" class="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 focus:outline-none">
+              <span class="font-display font-semibold text-white text-base sm:text-lg">What is the 1:1 Swap Vault and how do tokens work?</span>
+              <span class="faq-icon w-8 h-8 rounded-xl bg-obsidian border border-surface-border flex items-center justify-center text-accent-lime shrink-0 transition-transform duration-200">
+                <i data-lucide="chevron-down" class="w-4 h-4"></i>
+              </span>
+            </button>
+            <div class="faq-answer hidden px-5 pb-5 sm:px-6 sm:pb-6 text-sm text-zinc-400 leading-relaxed border-t border-surface-border/50 pt-4">
+              The Swap Vault lets you rotate looks without spending cash. You upload a piece sitting unworn in your wardrobe. Once verified, you receive 1 to 3 Wardrobe Tokens based on the garment's retail provenance and condition. You can redeem these tokens to borrow another student's outfit for your upcoming fest with zero rental charges.
+            </div>
+          </div>
+
+          <!-- FAQ Item 4 -->
+          <div class="faq-card rounded-2xl bg-surface-card border border-surface-border overflow-hidden transition-all">
+            <button onclick="toggleFaq(this)" class="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 focus:outline-none">
+              <span class="font-display font-semibold text-white text-base sm:text-lg">What happens if an outfit gets accidentally damaged or stained?</span>
+              <span class="faq-icon w-8 h-8 rounded-xl bg-obsidian border border-surface-border flex items-center justify-center text-accent-lime shrink-0 transition-transform duration-200">
+                <i data-lucide="chevron-down" class="w-4 h-4"></i>
+              </span>
+            </button>
+            <div class="faq-answer hidden px-5 pb-5 sm:px-6 sm:pb-6 text-sm text-zinc-400 leading-relaxed border-t border-surface-border/50 pt-4">
+              Minor wear-and-tear, minor seam stress, and washable food or drink spills are 100% covered by <strong>Reweara CareShield</strong> at no extra cost. For major irreversible tears or permanent burns, our condition review team compares return photos with the pre-dispatch timestamped CleanCheck™ log, and deductions are settled from the refundable escrow deposit.
+            </div>
+          </div>
+
+          <!-- FAQ Item 5 -->
+          <div class="faq-card rounded-2xl bg-surface-card border border-surface-border overflow-hidden transition-all">
+            <button onclick="toggleFaq(this)" class="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 focus:outline-none">
+              <span class="font-display font-semibold text-white text-base sm:text-lg">How quickly do I get my security escrow refunded?</span>
+              <span class="faq-icon w-8 h-8 rounded-xl bg-obsidian border border-surface-border flex items-center justify-center text-accent-lime shrink-0 transition-transform duration-200">
+                <i data-lucide="chevron-down" class="w-4 h-4"></i>
+              </span>
+            </button>
+            <div class="faq-answer hidden px-5 pb-5 sm:px-6 sm:pb-6 text-sm text-zinc-400 leading-relaxed border-t border-surface-border/50 pt-4">
+              Once you drop off the garment back into the campus locker node, our team inspects the return and triggers your refund within 30 minutes to 24 hours directly to your original UPI or payment account.
+            </div>
+          </div>
+
+          <!-- FAQ Item 6 -->
+          <div class="faq-card rounded-2xl bg-surface-card border border-surface-border overflow-hidden transition-all">
+            <button onclick="toggleFaq(this)" class="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 focus:outline-none">
+              <span class="font-display font-semibold text-white text-base sm:text-lg">How do I list my own clothes and get paid?</span>
+              <span class="faq-icon w-8 h-8 rounded-xl bg-obsidian border border-surface-border flex items-center justify-center text-accent-lime shrink-0 transition-transform duration-200">
+                <i data-lucide="chevron-down" class="w-4 h-4"></i>
+              </span>
+            </button>
+            <div class="faq-answer hidden px-5 pb-5 sm:px-6 sm:pb-6 text-sm text-zinc-400 leading-relaxed border-t border-surface-border/50 pt-4">
+              Click <strong>"List Wardrobe"</strong> in the top menu or ping our WhatsApp desk. Upload 3 clear photos and set your 48h rent price. Lenders receive an 85% net payout per rental directly via UPI within 24 hours of successful return (15% covers the industrial steam sanitization)[cite: 2].
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Help Desk Callout -->
+        <div class="mt-12 text-center">
+          <p class="text-xs text-zinc-400 font-mono">
+            Have a custom event inquiry or bulk group cultural order?
+            <a href="https://wa.me/917305609123?text=Hey%20Reweara,%20I%20have%20a%20question%20about%20campus%20rentals" target="_blank" class="text-emerald-400 hover:underline ml-1 font-bold">
+              Chat directly with our student team on WhatsApp (+91 7305609123) →
+            </a>
+          </p>
+        </div>
+
+      </div>
+    </section>
 
         <!-- WhatsApp Quick Connect Banner -->
         <div class="mt-10 p-6 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex flex-col sm:flex-row items-center justify-between gap-4">
